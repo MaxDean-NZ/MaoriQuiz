@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             String name;
-            String quizDifficulty;
+            char quizDifficulty;
 
             do
             {
@@ -19,8 +19,30 @@
 
             Console.WriteLine($"Welcome to the quiz, {name}!");
 
-            quizDifficulty = SelectDifficulty();
-            Console.WriteLine($"you chose {quizDifficulty} ");
+            quizDifficulty = Convert.ToChar(SelectDifficulty());
+
+            // clears console then initiates the quiz from difficulty given
+            Console.Clear();
+            switch (quizDifficulty)
+            {
+                case 'E':
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Easy");
+                    Console.ResetColor();
+                    break;
+
+                case 'M':
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Medium");
+                    Console.ResetColor();
+                    break;
+
+                case 'H':
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Hard");
+                    Console.ResetColor();
+                    break;
+            }
         }
         static String SelectDifficulty()
         {
@@ -33,9 +55,8 @@
                 if (quizDifficulty != "E" && quizDifficulty != "M" && quizDifficulty != "H") Console.WriteLine("Invalid input. Please enter E, M, or H\n");
             } while (quizDifficulty != "E" && quizDifficulty != "M" && quizDifficulty != "H");
 
-            if (quizDifficulty == "E") Environment.Exit(0);
+            //if (quizDifficulty == "E") Environment.Exit(0);
             return quizDifficulty;
-
         }
     }
 }
