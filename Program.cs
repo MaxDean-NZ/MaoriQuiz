@@ -5,21 +5,26 @@
         static void Main(string[] args)
         {
             String name;
-            char quizDifficulty;
+            String quizDifficulty;
 
             Console.WriteLine("Please enter your name: ");
-            name = Console.ReadLine();
+            name = Console.ReadLine().Trim();
             Console.WriteLine($"Welcome to the quiz, {name}!");
 
             quizDifficulty = SelectDifficulty();
             Console.WriteLine($"you chose {quizDifficulty} ");
         }
-        static char SelectDifficulty()
+        static String SelectDifficulty()
         {
-            char quizDifficulty;
-            Console.WriteLine("Would you like to play \"E\" Easy, \"M\" Medium, or \"H\" Hard?");
-            quizDifficulty = Convert.ToChar(Console.ReadLine().Trim().ToUpper()[0]);
-            if (quizDifficulty == 'E') Environment.Exit(0);
+            String quizDifficulty;
+            do
+            {
+                Console.WriteLine("Would you like to play \"E\" Easy, \"M\" Medium, or \"H\" Hard?");
+                quizDifficulty = Console.ReadLine().Trim().ToUpper();
+                if (quizDifficulty != "E" && quizDifficulty != "M" && quizDifficulty != "H") Console.WriteLine("Invalid input. Please enter E, M, or H");
+            } while (quizDifficulty != "E" && quizDifficulty != "M" && quizDifficulty != "H");
+            
+            if (quizDifficulty == "E") Environment.Exit(0);
             return quizDifficulty;
 
         }
