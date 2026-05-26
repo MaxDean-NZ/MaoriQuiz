@@ -14,7 +14,7 @@
                 // checks whether is null or empty
                 if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
                 // checks whether it obeys lower and upper bound
-                if (name.Length > 20 || name.Length < 3) Console.WriteLine("Name has to be between 20 and 3 characters.\n"
+                if (name.Length > 20 || name.Length < 3) Console.WriteLine("Name has to be between 20 and 3 characters.\n");
             } while(name == null || name == "");
 
             Console.WriteLine($"Welcome to the quiz, {name}!");
