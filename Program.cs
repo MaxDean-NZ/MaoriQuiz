@@ -1,4 +1,6 @@
-﻿namespace MaoriQuiz
+﻿using System.ComponentModel;
+
+namespace MaoriQuiz
 {
     internal class Program
     {
@@ -8,13 +10,13 @@
             char quizDifficulty;
 
             string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
-            char[] easyAnswers = new char[] { 'e', 'B', 'C' };
+            char[] easyAnswers = new char[] { 'A', 'B', 'C' };
 
             string[] mediumQuestions = new string[] { "medium mode question one", "two", "three" };
-            char[] mediumAnswers = new char[] { 'm', 'B', 'C' };
+            char[] mediumAnswers = new char[] { 'A', 'B', 'C' };
 
             string[] hardQuestions = new string[] { "hard mode question one", "two", "three" };
-            char[] hardAnswers = new char[] { 'h', 'B', 'C' };
+            char[] hardAnswers = new char[] { 'A', 'B', 'C' };
 
             // asks name, loops if left null or empty
             do
@@ -77,21 +79,39 @@
 
         static int LoadQuestions(string[] questions, char[] answers)
         {
-            int correctAnswers = 0;
-            char answertemp = 'X';
+            int correctAnswers = 0, incorrectAnswers = 0;
+            char answerTemp = 'X';
+            //valid inputs decides what characters are allowed
             char[] validinputs = new char[] { 'A', 'B', 'C', 'D' };
-            Console.WriteLine(questions[0]);
-            Console.WriteLine(answers[0]);
-            do
+            
+            for(int i = 0; i < questions.Length; i++)
             {
-                Console.WriteLine("Enter answer");
-                // checks if its a valid input.
-                answertemp = Convert.ToChar(Console.ReadLine().ToUpper()[0]);
-                if (validinputs.Contains(answertemp)) Console.WriteLine("valid input");
-                if ((validinputs.Contains(answertemp)) != true) Console.WriteLine("invalid input");
-            } while ((validinputs.Contains(answertemp)) != true);
+                //writes question
+                Console.WriteLine(questions[i]);
 
+                //user input
+                do
+                {
+                    Console.WriteLine("Enter answer");
+                    // checks if its a valid input by seeing if its a item of the array of valid answers.
+                    answerTemp = Convert.ToChar(Console.ReadLine().ToUpper()[0]);
+                    if (validinputs.Contains(answerTemp)) Console.WriteLine("valid input");
+                    if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("invalid input\n");
+                } while ((validinputs.Contains(answerTemp)) != true);
 
+                //checks if the answer is correct
+                if(answerTemp == answers[i])
+                {
+                    Console.WriteLine("answer is correct");
+                    correctAnswers++;
+                }
+                else
+                {
+                    Console.WriteLine("answer is wrong.");
+                    incorrectAnswers++;
+                }
+                Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers.\n");
+            }
             return correctAnswers;
         }
     }
