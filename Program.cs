@@ -25,7 +25,7 @@
                 if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
                 // checks whether it obeys lower and upper bound
                 if (name.Length > 20 || name.Length < 3) Console.WriteLine("Name has to be between 20 and 3 characters.\n");
-            } while(name == null || name == "");
+            } while(name == null || name == "" || name.Length > 20 || name.Length < 3);
 
             Console.WriteLine($"Welcome to the quiz, {name}!");
 
@@ -35,6 +35,7 @@
             Console.Clear();
             switch (quizDifficulty)
             {
+                // Loads Easy Mode
                 case 'E':
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Easy");
@@ -42,6 +43,7 @@
                     LoadQuestions(easyQuestions,easyAnswers);
                     break;
 
+                // Loads Medium Mode
                 case 'M':
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.WriteLine("Medium");
@@ -49,6 +51,7 @@
                     LoadQuestions(mediumQuestions, mediumAnswers);
                     break;
 
+                // Loads Hard Mode
                 case 'H':
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Hard");
