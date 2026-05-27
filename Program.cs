@@ -75,8 +75,16 @@
         static int LoadQuestions(string[] questions, char[] answers)
         {
             int correctAnswers = 0;
+            char answertemp;
+            char[] validinputs = new char[] { 'A', 'B', 'C', 'D' };
             Console.WriteLine(questions[0]);
             Console.WriteLine(answers[0]);
+            
+            // checks if its a valid input.
+            answertemp = Convert.ToChar(Console.ReadLine().ToUpper()[0]);
+            if (validinputs.Contains(answertemp)) Console.WriteLine("valid input");
+            if ((validinputs.Contains(answertemp))!= true) Console.WriteLine("invalid input");
+
             return correctAnswers;
         }
     }
