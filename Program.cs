@@ -7,6 +7,16 @@
             String name;
             char quizDifficulty;
 
+            string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
+            char[] easyAnswers = new char[] { 'e', 'B', 'C' };
+
+            string[] mediumQuestions = new string[] { "medium mode question one", "two", "three" };
+            char[] mediumAnswers = new char[] { 'm', 'B', 'C' };
+
+            string[] hardQuestions = new string[] { "hard mode question one", "two", "three" };
+            char[] hardAnswers = new char[] { 'h', 'B', 'C' };
+
+            // asks name, loops if left null or empty
             do
             {
                 Console.WriteLine("Please enter your name: ");
@@ -29,18 +39,21 @@
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Easy");
                     Console.ResetColor();
+                    LoadQuestions(easyQuestions,easyAnswers);
                     break;
 
                 case 'M':
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.WriteLine("Medium");
                     Console.ResetColor();
+                    LoadQuestions(mediumQuestions, mediumAnswers);
                     break;
 
                 case 'H':
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Hard");
                     Console.ResetColor();
+                    LoadQuestions(hardQuestions, hardAnswers);
                     break;
             }
         }
@@ -57,6 +70,14 @@
 
             //if (quizDifficulty == "E") Environment.Exit(0);
             return quizDifficulty;
+        }
+
+        static int LoadQuestions(string[] questions, char[] answers)
+        {
+            int correctAnswers = 0;
+            Console.WriteLine(questions[0]);
+            Console.WriteLine(answers[0]);
+            return correctAnswers;
         }
     }
 }
