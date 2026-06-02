@@ -12,27 +12,14 @@
             char quizDifficulty;
             char[] allowedLetters = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',' '};
 
-            string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
-            char[] easyAnswers = new char[] { 'A', 'B', 'C' };
-
             string[] mediumQuestions = new string[] { "medium mode question one", "two", "three" };
             char[] mediumAnswers = new char[] { 'A', 'B', 'C' };
 
             string[] hardQuestions = new string[] { "hard mode question one", "two", "three" };
             char[] hardAnswers = new char[] { 'A', 'B', 'C' };
 
-            // asks name, loops if left null or empty
-            /*
-            do
-            {
-                Console.WriteLine("Please enter your name: ");
-                name = Console.ReadLine().Trim();
-                // checks whether is null or empty
-                if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
-                // checks whether it obeys lower and upper bound
-                if (name.Length > 20 || name.Length < 3) Console.WriteLine("Name has to be between 20 and 3 characters.\n");
-            } while(name == null || name == "" || name.Length > 20 || name.Length < 3);
-            */
+            string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
+            char[] easyAnswers = new char[] { 'A', 'B', 'C' };
 
             do
             {
