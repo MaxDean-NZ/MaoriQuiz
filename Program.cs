@@ -6,6 +6,10 @@
         {
             String name, nameToUpper;
             char replay = 'Y';
+            
+            int correctAnswers = 0, incorrectAnswers = 0;
+            int highscoreCorrect = 0, highscoreIncorrect = 0;
+            decimal percentage = 0, highscorepercentage = 0;
 
             bool containsinvalidletter = false;
             bool validname = false;
@@ -71,7 +75,7 @@
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Easy");
                         Console.ResetColor();
-                        LoadQuestions(easyQuestions, easyAnswers);
+                        (correctAnswers, incorrectAnswers) =  LoadQuestions(easyQuestions, easyAnswers);
                         break;
 
                     // Loads Medium Mode
@@ -79,7 +83,7 @@
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("Medium");
                         Console.ResetColor();
-                        LoadQuestions(mediumQuestions, mediumAnswers);
+                        (correctAnswers, incorrectAnswers) = LoadQuestions(mediumQuestions, mediumAnswers);
                         break;
 
                     // Loads Hard Mode
@@ -87,9 +91,27 @@
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Hard");
                         Console.ResetColor();
-                        LoadQuestions(hardQuestions, hardAnswers);
+                        (correctAnswers, incorrectAnswers) = LoadQuestions(hardQuestions, hardAnswers);
                         break;
                 }
+
+                //calculates percentage score
+                percentage = CalculatePercentage(correctAnswers, incorrectAnswers);
+
+                //calculates whether it is a highscore or not
+                if(percentage > highscorepercentage)
+                {
+                    highscorepercentage = percentage;
+                    highscoreCorrect = correctAnswers;
+                    highscoreIncorrect = incorrectAnswers;
+
+                    Console.WriteLine($"You have a new high score with {correctAnswers} correct answers and {incorrectAnswers} incorrect answers, with a percentage of {percentage}%");
+                }
+                else
+                {
+                    Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers, with a percentage of {percentage}%");
+                }
+
                 //asks whether the player would like to replay or not
                 replay = Replay();
                 if(replay == 'Y') Console.Clear();
@@ -111,7 +133,7 @@
             return quizDifficulty;
         }
 
-        static int LoadQuestions(string[] questions, char[] answers)
+        static (int, int) LoadQuestions(string[] questions, char[] answers)
         {
             int correctAnswers = 0, incorrectAnswers = 0;
             char answerTemp = 'X';
@@ -147,7 +169,14 @@
                 }
                 Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers.\n");
             }
-            return correctAnswers;
+            return (correctAnswers, incorrectAnswers);
+        }
+
+        static decimal CalculatePercentage(int correctAnswers, int incorrectAnswers)
+        {
+            decimal percentage;
+            percentage = Math.Round(((decimal)correctAnswers / (incorrectAnswers+correctAnswers))*100,2);
+            return percentage;
         }
 
         static char Replay()
