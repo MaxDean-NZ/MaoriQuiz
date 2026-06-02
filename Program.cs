@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             String name, nameToUpper;
+            char replay = 'Y';
 
             bool containsinvalidletter = false;
             bool validname = false;
@@ -12,14 +13,14 @@
             char quizDifficulty;
             char[] allowedLetters = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',' '};
 
+            string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
+            char[] easyAnswers = new char[] { 'A', 'B', 'C' };
+
             string[] mediumQuestions = new string[] { "medium mode question one", "two", "three" };
             char[] mediumAnswers = new char[] { 'A', 'B', 'C' };
 
             string[] hardQuestions = new string[] { "hard mode question one", "two", "three" };
             char[] hardAnswers = new char[] { 'A', 'B', 'C' };
-
-            string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
-            char[] easyAnswers = new char[] { 'A', 'B', 'C' };
 
             do
             {
@@ -40,6 +41,7 @@
 
                     do
                     {
+                        // checks each individual letter whether its a valid letter or not
                         foreach (char letter in namechars)
                         {
                             if ((allowedLetters.Contains(letter)) != true)
@@ -56,37 +58,44 @@
 
             Console.WriteLine($"\nWelcome to the quiz, {name}!");
 
-            quizDifficulty = Convert.ToChar(SelectDifficulty());
-
-            // clears console then initiates the quiz from difficulty given
-            Console.Clear();
-            switch (quizDifficulty)
+            do
             {
-                // Loads Easy Mode
-                case 'E':
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Easy");
-                    Console.ResetColor();
-                    LoadQuestions(easyQuestions, easyAnswers);
-                    break;
+                quizDifficulty = Convert.ToChar(SelectDifficulty());
 
-                // Loads Medium Mode
-                case 'M':
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine("Medium");
-                    Console.ResetColor();
-                    LoadQuestions(mediumQuestions, mediumAnswers);
-                    break;
+                // clears console then initiates the quiz from difficulty given
+                Console.Clear();
+                switch (quizDifficulty)
+                {
+                    // Loads Easy Mode
+                    case 'E':
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Easy");
+                        Console.ResetColor();
+                        LoadQuestions(easyQuestions, easyAnswers);
+                        break;
 
-                // Loads Hard Mode
-                case 'H':
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine("Hard");
-                    Console.ResetColor();
-                    LoadQuestions(hardQuestions, hardAnswers);
-                    break;
-            }
+                    // Loads Medium Mode
+                    case 'M':
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Medium");
+                        Console.ResetColor();
+                        LoadQuestions(mediumQuestions, mediumAnswers);
+                        break;
+
+                    // Loads Hard Mode
+                    case 'H':
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("Hard");
+                        Console.ResetColor();
+                        LoadQuestions(hardQuestions, hardAnswers);
+                        break;
+                }
+                //asks whether the player would like to replay or not
+                replay = Replay();
+                if(replay == 'Y') Console.Clear();
+            } while (replay == 'Y');
         }
+
         static String SelectDifficulty()
         {
             String quizDifficulty;
@@ -125,7 +134,7 @@
                     if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("invalid input\n");
                 } while ((validinputs.Contains(answerTemp)) != true);
 
-                //checks if the answer is correct
+                //checks if the answer is correct or wrong
                 if (answerTemp == answers[i])
                 {
                     Console.WriteLine("answer is correct");
@@ -139,6 +148,18 @@
                 Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers.\n");
             }
             return correctAnswers;
+        }
+
+        static char Replay()
+        {
+            String replay = " ";
+            do
+            {
+                Console.WriteLine("Would you like to replay? [Y/N]: ");
+                replay = Console.ReadLine().Trim().ToUpper();
+                if (replay != "Y" && replay != "N") Console.WriteLine("Invalid input, please enter [Y/N].");
+            } while (replay != "Y" && replay != "N");
+            return Convert.ToChar(replay);
         }
     }
 }
