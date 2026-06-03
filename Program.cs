@@ -1,21 +1,18 @@
-﻿namespace MaoriQuiz
+﻿using System.Xml.Linq;
+
+namespace MaoriQuiz
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            String name, nameToUpper;
+            String name;
+            char quizDifficulty;
             char replay = 'Y';
             
             int correctAnswers = 0, incorrectAnswers = 0;
             int highscoreCorrect = 0, highscoreIncorrect = 0;
             decimal percentage = 0, highscorepercentage = 0;
-
-            bool containsinvalidletter = false;
-            bool validname = false;
-
-            char quizDifficulty;
-            char[] allowedLetters = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',' '};
 
             string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
             char[] easyAnswers = new char[] { 'A', 'B', 'C' };
@@ -26,40 +23,8 @@
             string[] hardQuestions = new string[] { "hard mode question one", "two", "three" };
             char[] hardAnswers = new char[] { 'A', 'B', 'C' };
 
-            do
-            {
-                containsinvalidletter = false;
-                validname = false;
-
-                Console.WriteLine("Please enter your name: ");
-                name = Console.ReadLine().Trim();
-                // checks whether is null or empty
-                if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
-                // checks whether it obeys lower and upper bound
-                if (name.Length > 20 || name.Length < 3 && name != "") Console.WriteLine("Name has to be between 20 and 3 characters.\n");
-
-                if (name.Length < 21 && name.Length > 2 && name != "")
-                {
-                    nameToUpper = name.ToUpper();
-                    char[] namechars = nameToUpper.ToCharArray();
-
-                    do
-                    {
-                        // checks each individual letter whether its a valid letter or not
-                        foreach (char letter in namechars)
-                        {
-                            if ((allowedLetters.Contains(letter)) != true)
-                            {
-                                containsinvalidletter = true;
-                            }
-                        }
-                        validname = true;
-                    } while (containsinvalidletter == false && validname == false);
-                    if (containsinvalidletter) Console.WriteLine("Invalid characters, please enter A-Z only.\n");
-                }
-            } while (name == null || name == "" || name.Length > 20 || name.Length < 3 || validname == false || containsinvalidletter == true);
-            
-
+            // prompts the user for their name
+            name = SelectName();
             Console.WriteLine($"\nWelcome to the quiz, {name}!");
 
             do
@@ -118,6 +83,50 @@
             } while (replay == 'Y');
         }
 
+        static String SelectName()
+        {
+            String name, nameToUpper;
+            char[] allowedLetters = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ' };
+
+            bool containsinvalidletter = false;
+            bool validname = false;
+
+            //do while loop makes it so it keeps reprompting until its within the requirements (3-20 char, only A-Z, not null)
+            do
+            {
+                containsinvalidletter = false;
+                validname = false;
+
+                Console.WriteLine("Please enter your name: ");
+                name = Console.ReadLine().Trim();
+                // checks whether is null or empty
+                if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
+                // checks whether it obeys lower and upper bound
+                if (name.Length > 20 || name.Length < 3 && name != "") Console.WriteLine("Name has to be between 20 and 3 characters.\n");
+
+                if (name.Length < 21 && name.Length > 2 && name != "")
+                {
+                    nameToUpper = name.ToUpper();
+                    char[] namechars = nameToUpper.ToCharArray();
+
+                    do
+                    {
+                        // checks each individual letter whether its a valid letter or not
+                        foreach (char letter in namechars)
+                        {
+                            if ((allowedLetters.Contains(letter)) != true)
+                            {
+                                containsinvalidletter = true;
+                            }
+                        }
+                        validname = true;
+                    } while (containsinvalidletter == false && validname == false);
+                    if (containsinvalidletter) Console.WriteLine("Invalid characters, please enter A-Z only.\n");
+                }
+            } while (name == null || name == "" || name.Length > 20 || name.Length < 3 || validname == false || containsinvalidletter == true);
+            return name;
+        }
+        
         static String SelectDifficulty()
         {
             String quizDifficulty;
