@@ -28,8 +28,15 @@
             string[] mediumQuestions = new string[] {
             "Question 1. What is 100 in Te Reo \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
             "Question 2. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makau Rau\nD. Otautahi\n",
-            "Question 3. \nA.\nB.\nC.\nD.\n"};
-            char[] mediumAnswers = new char[] { 'A', 'C', 'C' };
+            "Question 3. What is the North Island in Maori? \nA. Te Ika a Maui\nB. Rotorua\nC. Te Waipounamu\nD. Te Tai Tokerau\n",
+            "Question 4. What is the ancestral homeland of all Maori in Maori culture?\nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. California\n",
+            "Question 5. When did Maori arrive in Aotearoa?\nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n",
+            "Question 6. \nA.\nB.\nC.\nD.\n",
+            "Question 7. \nA.\nB.\nC.\nD.\n",
+            "Question 8. \nA.\nB.\nC.\nD.\n",
+            "Question 9. \nA.\nB.\nC.\nD.\n",
+            "Question 10. \nA.\nB.\nC.\nD.\n", };
+            char[] mediumAnswers = new char[] {'A','C','A','B','D','A','D','C','B','D'};
 
             string[] hardQuestions = new string[] {
             "Question 1. \nA.\nB.\nC.\nD.\n",
