@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace MaoriQuiz
+﻿namespace MaoriQuiz
 {
     internal class Program
     {
