@@ -16,20 +16,20 @@
             "Question 1. What is Te Reo for Ocean? \nA. Moana\nB. Awa\nC. Whenua\nD. Maunga\n",
             "Question 2. What is 7 in Te Reo? \nA. Ono\nB. Rima\nC. Whitu\nD. Waru\n",
             "Question 3. What colour is Ma? \nA. Black\nB. White\nC. Brown\nD. Grey\n",
-            "Question 4. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makau Rau\nD. Otautahi\n",
+            "Question 4. What is Matariki in Maori culture? \nA. A type of food\nB. A place \nC. A person \nD. Maori New Year",
             "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n",
             "Question 6. What is Tane widely known for\nA. Creating the big bang\nB. Creating fire\nC. Inventing the weekend\nD. Seperating the sky and earth\n",
             "Question 7. Who brought fire to the humans in Maori mythology? \nA. Tangaroa\nB. Maui\nC. Zeus\nD. Kahukura\n",
             "Question 8. Who chopped down the flagstaff repeatedly, starting the flagstaff war?\nA. Hone Heke \nB. Whina Cooper\nC. Taika Waititi\nD. Rawiri Waititi\n",
             "Question 9. What colour is Kakariki? \nA. Blue\nB. Black\nC. Green\nD. Brown\n",
             "Question 10. When was the Treaty of Waitangi / Te Tiriti?\nA. 1800\nB. 1880\nC. 1860\nD. 1840\n",};
-            char[] easyAnswers = new char[] {'A','C','B','C','A','D','B','A','C','D'};
+            char[] easyAnswers = new char[] {'A','C','B','D','A','D','B','A','C','D'};
 
             string[] mediumQuestions = new string[] {
             "Question 1. What is 100 in Te Reo \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
-            "Question 2. \nA.\nB.\nC.\nD.\n",
+            "Question 2. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makau Rau\nD. Otautahi\n",
             "Question 3. \nA.\nB.\nC.\nD.\n"};
-            char[] mediumAnswers = new char[] { 'A', 'B', 'C' };
+            char[] mediumAnswers = new char[] { 'A', 'C', 'C' };
 
             string[] hardQuestions = new string[] {
             "Question 1. \nA.\nB.\nC.\nD.\n",
