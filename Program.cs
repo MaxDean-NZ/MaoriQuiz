@@ -12,7 +12,10 @@
             int highscoreCorrect = 0, highscoreIncorrect = 0;
             decimal percentage = 0, highscorepercentage = 0;
 
-            string[] easyQuestions = new string[] { "easy mode question one", "two", "three" };
+            string[] easyQuestions = new string[] {
+            "Question 1. \nA.\nB.\nC.\nD.\n",
+            "Question 2. \nA.\nB.\nC.\nD.\n",
+            "Question 3. \nA.\nB.\nC.\nD.\n"};
             char[] easyAnswers = new char[] { 'A', 'B', 'C' };
 
             string[] mediumQuestions = new string[] { "medium mode question one", "two", "three" };
@@ -101,7 +104,7 @@
                 if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
                 // checks whether it obeys lower and upper bound
                 if (name.Length > 20 || name.Length < 3 && name != "") Console.WriteLine("Name has to be between 20 and 3 characters.\n");
-
+                
                 if (name.Length < 21 && name.Length > 2 && name != "")
                 {
                     nameToUpper = name.ToUpper();
@@ -149,7 +152,7 @@
 
             for (int i = 0; i < questions.Length; i++)
             {
-                //writes question
+                //writes question number + question
                 Console.WriteLine(questions[i]);
 
                 //user input
@@ -159,19 +162,22 @@
                     // checks if its a valid input by seeing if its a item of the array of valid answers.
                     answerTemp = Convert.ToChar(Console.ReadLine().ToUpper()[0]);
                     // remember to check for null values.
-                    if (validinputs.Contains(answerTemp)) Console.WriteLine("valid input");
                     if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("invalid input\n");
                 } while ((validinputs.Contains(answerTemp)) != true);
 
                 //checks if the answer is correct or wrong
                 if (answerTemp == answers[i])
                 {
-                    Console.WriteLine("answer is correct");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Correct!");
+                    Console.ResetColor();
                     correctAnswers++;
                 }
                 else
                 {
-                    Console.WriteLine("answer is wrong.");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Incorrect.");
+                    Console.ResetColor();
                     incorrectAnswers++;
                 }
                 Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers.\n");
