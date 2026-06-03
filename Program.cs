@@ -7,21 +7,34 @@
             String name;
             char quizDifficulty;
             char replay = 'Y';
-            
+
             int correctAnswers = 0, incorrectAnswers = 0;
             int highscoreCorrect = 0, highscoreIncorrect = 0;
             decimal percentage = 0, highscorepercentage = 0;
 
             string[] easyQuestions = new string[] {
+            "Question 1. What is Te Reo for Ocean? \nA. Moana\nB. Awa\nC. Whenua\nD. Maunga\n",
+            "Question 2. What is 7 in Te Reo? \nA. Ono\nB. Rima\nC. Whitu\nD. Waru\n",
+            "Question 3. What colour is Ma? \nA. Black\nB. White\nC. Brown\nD. Grey\n",
+            "Question 4. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makau Rau\nD. Otautahi\n",
+            "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n",
+            "Question 6. What is Tane widely known for\nA. Creating the big bang\nB. Creating fire\nC. Inventing the weekend\nD. Seperating the sky and earth\n",
+            "Question 7. Who brought fire to the humans in Maori mythology? \nA. Tangaroa\nB. Maui\nC. Zeus\nD. Kahukura\n",
+            "Question 8. Who chopped down the flagstaff repeatedly, starting the flagstaff war?\nA. Hone Heke \nB. Whina Cooper\nC. Taika Waititi\nD. Rawiri Waititi\n",
+            "Question 9. What colour is Kakariki? \nA. Blue\nB. Black\nC. Green\nD. Brown\n",
+            "Question 10. When was the Treaty of Waitangi / Te Tiriti?\nA. 1800\nB. 1880\nC. 1860\nD. 1840\n",};
+            char[] easyAnswers = new char[] {'A','C','B','C','A','D','B','A','C','D'};
+
+            string[] mediumQuestions = new string[] {
+            "Question 1. What is 100 in Te Reo \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
+            "Question 2. \nA.\nB.\nC.\nD.\n",
+            "Question 3. \nA.\nB.\nC.\nD.\n"};
+            char[] mediumAnswers = new char[] { 'A', 'B', 'C' };
+
+            string[] hardQuestions = new string[] {
             "Question 1. \nA.\nB.\nC.\nD.\n",
             "Question 2. \nA.\nB.\nC.\nD.\n",
             "Question 3. \nA.\nB.\nC.\nD.\n"};
-            char[] easyAnswers = new char[] { 'A', 'B', 'C' };
-
-            string[] mediumQuestions = new string[] { "medium mode question one", "two", "three" };
-            char[] mediumAnswers = new char[] { 'A', 'B', 'C' };
-
-            string[] hardQuestions = new string[] { "hard mode question one", "two", "three" };
             char[] hardAnswers = new char[] { 'A', 'B', 'C' };
 
             // prompts the user for their name
