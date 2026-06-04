@@ -40,16 +40,16 @@
 
             string[] hardQuestions = new string[] {
             "Question 1. What is Mahunga / Makawe?\nA. Earlobe\nB. Toes\nC. Shoulders\nD. Hair\n",
-            "Question 2. \nA.\nB.\nC.\nD.\n",
-            "Question 3. \nA.\nB.\nC.\nD.\n",
-            "Question 4. \nA.\nB.\nC.\nD.\n",
-            "Question 5. \nA.\nB.\nC.\nD.\n",
+            "Question 2. If you feel ngenge, you are: \nA. Happy\nB. Tired\nC. Sad\nD. Angry\n",
+            "Question 3. If Te Kapua is tekau ma wha years old, how old is he? \nA. 14\nB. 15\nC. 21\nD. 25\n",
+            "Question 4. An Ika could be found at a: \nA. Maunga\nB. Awa\nC. Whenua\nD. Tahora\n",
+            "Question 5. What is the major conflict involving the Kingitanga movement and large land confiscations\nA. Te Kootis War\nB. WW II\nC. Invasion of the Waikato\nD. Taranaki War\n",
             "Question 6. \nA.\nB.\nC.\nD.\n",
             "Question 7. \nA.\nB.\nC.\nD.\n",
             "Question 8. \nA.\nB.\nC.\nD.\n",
             "Question 9. \nA.\nB.\nC.\nD.\n",
             "Question 10. \nA.\nB.\nC.\nD."};
-            char[] hardAnswers = new char[] { 'D', 'B', 'C' };
+            char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'C', 'A', 'D', 'C', 'B', 'D' };
 
             // prompts the user for their name
             name = SelectName();
