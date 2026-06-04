@@ -205,6 +205,7 @@
             return (correctAnswers, incorrectAnswers);
         }
 
+        //calculates percentage which is used for high score + regular score
         static decimal CalculatePercentage(int correctAnswers, int incorrectAnswers)
         {
             decimal percentage;
@@ -212,6 +213,7 @@
             return percentage;
         }
 
+        //replay function
         static char Replay()
         {
             String replay = " ";
