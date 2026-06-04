@@ -18,24 +18,24 @@
             "Question 3. What colour is Ma? \nA. Black\nB. White\nC. Brown\nD. Grey\n",
             "Question 4. What is Matariki in Maori culture? \nA. A type of food\nB. A place \nC. A person \nD. Maori New Year",
             "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n",
-            "Question 6. What is Tane widely known for\nA. Creating the big bang\nB. Creating fire\nC. Inventing the weekend\nD. Seperating the sky and earth\n",
+            "Question 6. What is Tane widely known for? \nA. Creating the big bang\nB. Creating fire\nC. Inventing the weekend\nD. Seperating the sky and earth\n",
             "Question 7. Who brought fire to the humans in Maori mythology? \nA. Tangaroa\nB. Maui\nC. Zeus\nD. Kahukura\n",
-            "Question 8. Who chopped down the flagstaff repeatedly, starting the flagstaff war?\nA. Hone Heke \nB. Whina Cooper\nC. Taika Waititi\nD. Rawiri Waititi\n",
+            "Question 8. Who chopped down the flagstaff repeatedly, starting the flagstaff war? \nA. Hone Heke \nB. Whina Cooper\nC. Taika Waititi\nD. Rawiri Waititi\n",
             "Question 9. What colour is Kakariki? \nA. Blue\nB. Black\nC. Green\nD. Brown\n",
-            "Question 10. When was the Treaty of Waitangi / Te Tiriti?\nA. 1800\nB. 1880\nC. 1860\nD. 1840\n",};
+            "Question 10. When was the Treaty of Waitangi / Te Tiriti? \nA. 1800\nB. 1880\nC. 1860\nD. 1840\n",};
             char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A', 'D', 'B', 'A', 'C', 'D' };
 
             string[] mediumQuestions = new string[] {
-            "Question 1. What is 100 in Te Reo \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
+            "Question 1. What is 100 in Te Reo? \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
             "Question 2. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makau Rau\nD. Otautahi\n",
             "Question 3. What is the North Island in Maori? \nA. Te Ika a Maui\nB. Rotorua\nC. Te Waipounamu\nD. Te Tai Tokerau\n",
-            "Question 4. What is the ancestral homeland of all Maori in Maori culture?\nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. California\n",
-            "Question 5. When did Maori arrive in Aotearoa?\nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n",
+            "Question 4. What is the ancestral homeland of all Maori in Maori culture? \nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. California\n",
+            "Question 5. When did Maori arrive in Aotearoa? \nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n",
             "Question 6. What is a puku? \nA. Stomach\nB. Head\nC. Shoulders\nD. Knees\n",
             "Question 7. What day is Rahina? \nA. Sunday\nB. Friday\nC. Tuesday\nD. Monday\n",
             "Question 8. Where are taniwha depicted living? \nA. Mountains\nB. Forest\nC. Ocean / Lakes\nD. Desert\n",
             "Question 9. Who was the one to slow down the sun? \nA. Ranginui\nB. Maui\nC. Tane\nD. Te Po\n",
-            "Question 10. Which of these are not a real Maori place \nA. Ngamotu\nB. Te Tihi o Maru\nC. Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu\nD. Rukahu Reira\n", };
+            "Question 10. Which of these are not a real Maori place? \nA. Ngamotu\nB. Te Tihi o Maru\nC. Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu\nD. Rukahu Reira\n", };
             char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D', 'A', 'D', 'C', 'B', 'D' };
 
             string[] hardQuestions = new string[] {
