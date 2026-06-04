@@ -23,7 +23,7 @@
             "Question 8. Who chopped down the flagstaff repeatedly, starting the flagstaff war?\nA. Hone Heke \nB. Whina Cooper\nC. Taika Waititi\nD. Rawiri Waititi\n",
             "Question 9. What colour is Kakariki? \nA. Blue\nB. Black\nC. Green\nD. Brown\n",
             "Question 10. When was the Treaty of Waitangi / Te Tiriti?\nA. 1800\nB. 1880\nC. 1860\nD. 1840\n",};
-            char[] easyAnswers = new char[] {'A','C','B','D','A','D','B','A','C','D'};
+            char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A', 'D', 'B', 'A', 'C', 'D' };
 
             string[] mediumQuestions = new string[] {
             "Question 1. What is 100 in Te Reo \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
@@ -31,18 +31,25 @@
             "Question 3. What is the North Island in Maori? \nA. Te Ika a Maui\nB. Rotorua\nC. Te Waipounamu\nD. Te Tai Tokerau\n",
             "Question 4. What is the ancestral homeland of all Maori in Maori culture?\nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. California\n",
             "Question 5. When did Maori arrive in Aotearoa?\nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n",
+            "Question 6. What is a puku? \nA. Stomach\nB. Head\nC. Shoulders\nD. Knees\n",
+            "Question 7. What day is Rahina? \nA. Sunday\nB. Friday\nC. Tuesday\nD. Monday\n",
+            "Question 8. Where are taniwha depicted living? \nA. Mountains\nB. Forest\nC. Ocean / Lakes\nD. Desert\n",
+            "Question 9. Who was the one to slow down the sun? \nA. Ranginui\nB. Maui\nC. Tane\nD. Te Po\n",
+            "Question 10. Which of these are not a real Maori place \nA. Ngamotu\nB. Te Tihi o Maru\nC. Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu\nD. Rukahu Reira\n", };
+            char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D', 'A', 'D', 'C', 'B', 'D' };
+
+            string[] hardQuestions = new string[] {
+            "Question 1. What is Mahunga / Makawe?\nA. Earlobe\nB. Toes\nC. Shoulders\nD. Hair\n",
+            "Question 2. \nA.\nB.\nC.\nD.\n",
+            "Question 3. \nA.\nB.\nC.\nD.\n",
+            "Question 4. \nA.\nB.\nC.\nD.\n",
+            "Question 5. \nA.\nB.\nC.\nD.\n",
             "Question 6. \nA.\nB.\nC.\nD.\n",
             "Question 7. \nA.\nB.\nC.\nD.\n",
             "Question 8. \nA.\nB.\nC.\nD.\n",
             "Question 9. \nA.\nB.\nC.\nD.\n",
-            "Question 10. \nA.\nB.\nC.\nD.\n", };
-            char[] mediumAnswers = new char[] {'A','C','A','B','D','A','D','C','B','D'};
-
-            string[] hardQuestions = new string[] {
-            "Question 1. \nA.\nB.\nC.\nD.\n",
-            "Question 2. \nA.\nB.\nC.\nD.\n",
-            "Question 3. \nA.\nB.\nC.\nD.\n"};
-            char[] hardAnswers = new char[] { 'A', 'B', 'C' };
+            "Question 10. \nA.\nB.\nC.\nD."};
+            char[] hardAnswers = new char[] { 'D', 'B', 'C' };
 
             // prompts the user for their name
             name = SelectName();
@@ -61,7 +68,7 @@
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Easy");
                         Console.ResetColor();
-                        (correctAnswers, incorrectAnswers) =  LoadQuestions(easyQuestions, easyAnswers);
+                        (correctAnswers, incorrectAnswers) = LoadQuestions(easyQuestions, easyAnswers);
                         break;
 
                     // Loads Medium Mode
@@ -85,7 +92,7 @@
                 percentage = CalculatePercentage(correctAnswers, incorrectAnswers);
 
                 //calculates whether it is a highscore or not
-                if(percentage > highscorepercentage)
+                if (percentage > highscorepercentage)
                 {
                     highscorepercentage = percentage;
                     highscoreCorrect = correctAnswers;
@@ -100,7 +107,7 @@
 
                 //asks whether the player would like to replay or not
                 replay = Replay();
-                if(replay == 'Y') Console.Clear();
+                if (replay == 'Y') Console.Clear();
             } while (replay == 'Y');
         }
 
@@ -124,7 +131,7 @@
                 if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
                 // checks whether it obeys lower and upper bound
                 if (name.Length > 20 || name.Length < 3 && name != "") Console.WriteLine("Name has to be between 20 and 3 characters.\n");
-                
+
                 if (name.Length < 21 && name.Length > 2 && name != "")
                 {
                     nameToUpper = name.ToUpper();
@@ -147,7 +154,7 @@
             } while (name == null || name == "" || name.Length > 20 || name.Length < 3 || validname == false || containsinvalidletter == true);
             return name;
         }
-        
+
         static String SelectDifficulty()
         {
             String quizDifficulty;
@@ -209,7 +216,7 @@
         static decimal CalculatePercentage(int correctAnswers, int incorrectAnswers)
         {
             decimal percentage;
-            percentage = Math.Round(((decimal)correctAnswers / (incorrectAnswers+correctAnswers))*100,2);
+            percentage = Math.Round(((decimal)correctAnswers / (incorrectAnswers + correctAnswers)) * 100, 2);
             return percentage;
         }
 
