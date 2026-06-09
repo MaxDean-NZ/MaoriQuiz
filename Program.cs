@@ -91,7 +91,9 @@
                 //calculates percentage score
                 percentage = CalculatePercentage(correctAnswers, incorrectAnswers);
 
-                //calculates whether it is a highscore or not
+                /*calculates whether it is a highscore or not
+                if it is a highscore it changes it to the new highscore.*/
+
                 if (percentage > highscorepercentage)
                 {
                     highscorepercentage = percentage;
@@ -155,6 +157,7 @@
             return name;
         }
 
+        // takes player input validates, then returns the difficulty to the main loop
         static String SelectDifficulty()
         {
             String quizDifficulty;
@@ -220,7 +223,7 @@
             return percentage;
         }
 
-        //replay function
+        //replay function , if player answers Y, it resarts gameplay loop, if player answers N, it exits gameplay loop.
         static char Replay()
         {
             String replay = " ";
