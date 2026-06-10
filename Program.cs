@@ -35,7 +35,7 @@
             "Question 7. What day is Rahina? \nA. Sunday\nB. Friday\nC. Tuesday\nD. Monday\n",
             "Question 8. Where are taniwha depicted living? \nA. Mountains\nB. Forest\nC. Ocean / Lakes\nD. Desert\n",
             "Question 9. Who was the one to slow down the sun? \nA. Ranginui\nB. Maui\nC. Tane\nD. Te Po\n",
-            "Question 10. Which of these are not a real Maori place? \nA. Ngamotu\nB. Te Tihi o Maru\nC. Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu\nD. Rukahu Reira\n", };
+            "Question 10. What year did James Cook land in Aotearoa New Zealand? \nA. 1643\nB. 1956\nC. 1851\nD. 1769\n"};
             char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D', 'A', 'D', 'C', 'B', 'D' };
 
             string[] hardQuestions = new string[] {
@@ -44,23 +44,23 @@
             "Question 3. If Te Kapua is tekau ma wha years old, how old is he? \nA. 14\nB. 15\nC. 21\nD. 25\n",
             "Question 4. An Ika could be found at a: \nA. Maunga\nB. Awa\nC. Whenua\nD. Tahora\n",
             "Question 5. What is the major conflict involving the Kingitanga movement and large land confiscations\nA. Te Kootis War\nB. WW II\nC. Invasion of the Waikato\nD. Taranaki War\n",
-            "Question 6. \nA.\nB.\nC.\nD.\n",
-            "Question 7. \nA.\nB.\nC.\nD.\n",
-            "Question 8. \nA.\nB.\nC.\nD.\n",
-            "Question 9. \nA.\nB.\nC.\nD.\n",
-            "Question 10. \nA.\nB.\nC.\nD."};
+            "Question 6. Where is the Maori Battalion reknown for their contribtion to W II? \nA. North Africa / Middle East\nB. Malaya\nC. Burma\nD. Saipan\n",
+            "Question 7. Which of these is not a member of the first 7 canoes to Aotearoa. \nA. Te Arawa\nB. Tainui\nC. Aotea\nD. Te Kawau\n",
+            "Question 8. Which Maori figure is depicted as the discoverer of Aotearoa? \nA. Te Rauparaha \nB. Rewi\nC. Kupe\nD. Te Kooti\n",
+            "Question 9. What is a karaka \nA. TV\nB. Clock\nC. Knife\nD. Bird\n",
+            "Question 10. Which of these are not a real Maori place? \nA. Ngamotu\nB. Te Tihi o Maru\nC. Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu\nD. Rukahu Reira\n"};
             char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'C', 'A', 'D', 'C', 'B', 'D' };
 
             // prompts the user for their name
             name = SelectName();
             Console.WriteLine($"\nWelcome to the quiz, {name}!");
 
+            // This is the main gameplay loop
             do
             {
                 quizDifficulty = Convert.ToChar(SelectDifficulty());
-
-                // clears console then initiates the quiz from difficulty given
                 Console.Clear();
+                // This switch loads the difficulties questions into the LoadQuestions() function, with it returning the number of incorrect and correct answers so the players grade / result can be calculated.
                 switch (quizDifficulty)
                 {
                     // Loads Easy Mode
@@ -113,6 +113,7 @@
             } while (replay == 'Y');
         }
 
+        // Takes user input for the name, validates it then returns it to the main loop.
         static String SelectName()
         {
             String name, nameToUpper;
@@ -192,7 +193,7 @@
                     // checks if its a valid input by seeing if its a item of the array of valid answers.
                     answerTemp = Convert.ToChar(Console.ReadLine().ToUpper()[0]);
                     // remember to check for null values.
-                    if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("invalid input\n");
+                    if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("Invalid input.\n");
                 } while ((validinputs.Contains(answerTemp)) != true);
 
                 //checks if the answer is correct or wrong
