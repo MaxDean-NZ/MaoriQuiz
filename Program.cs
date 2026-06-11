@@ -17,13 +17,8 @@
             "Question 2. What is 7 in Te Reo? \nA. Ono\nB. Rima\nC. Whitu\nD. Waru\n",
             "Question 3. What colour is Ma? \nA. Black\nB. White\nC. Brown\nD. Grey\n",
             "Question 4. What is Matariki in Maori culture? \nA. A type of food\nB. A place \nC. A person \nD. Maori New Year",
-            "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n",
-            /*"Question 6. What is Tane widely known for? \nA. Creating the big bang\nB. Creating fire\nC. Inventing the weekend\nD. Seperating the sky and earth\n",
-            "Question 7. Who brought fire to the humans in Maori mythology? \nA. Tangaroa\nB. Maui\nC. Zeus\nD. Kahukura\n",
-            "Question 8. Who chopped down the flagstaff repeatedly, starting the flagstaff war? \nA. Hone Heke \nB. Whina Cooper\nC. Taika Waititi\nD. Rawiri Waititi\n",
-            "Question 9. What colour is Kakariki? \nA. Blue\nB. Black\nC. Green\nD. Brown\n",
-            "Question 10. When was the Treaty of Waitangi / Te Tiriti? \nA. 1800\nB. 1880\nC. 1860\nD. 1840\n",*/};
-            char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A',/* 'D', 'B', 'A', 'C', 'D'*/ };
+            "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n",);
+            char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A',};
 
             string[] mediumQuestions = new string[] {
             "Question 1. What is 100 in Te Reo? \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
@@ -190,11 +185,11 @@
                 //user input
                 do
                 {
-                    Console.WriteLine("Enter answer");
+                    Console.WriteLine("Enter answer:");
                     // checks if its a valid input by seeing if its a item of the array of valid answers.
                     answerTemp = Convert.ToChar(Console.ReadLine().ToUpper()[0]);
                     // remember to check for null values.
-                    if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("Invalid input.\n");
+                    if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("Invalid Input.\n");
                 } while ((validinputs.Contains(answerTemp)) != true);
 
                 //checks if the answer is correct or wrong
