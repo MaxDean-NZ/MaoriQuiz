@@ -17,7 +17,7 @@
             "Question 2. What is 7 in Te Reo? \nA. Ono\nB. Rima\nC. Whitu\nD. Waru\n",
             "Question 3. What colour is Ma? \nA. Black\nB. White\nC. Brown\nD. Grey\n",
             "Question 4. What is Matariki in Maori culture? \nA. A type of food\nB. A place \nC. A person \nD. Maori New Year",
-            "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n",);
+            "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n", };
             char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A',};
 
             string[] mediumQuestions = new string[] {
@@ -173,7 +173,8 @@
         static (int, int) LoadQuestions(string[] questions, char[] answers)
         {
             int correctAnswers = 0, incorrectAnswers = 0;
-            char answerTemp = 'X';
+            string answerTemp;
+            char userAnswer = 'X';
             //valid inputs decides what characters are allowed
             char[] validinputs = new char[] { 'A', 'B', 'C', 'D' };
 
@@ -182,18 +183,22 @@
                 //writes question number + question
                 Console.WriteLine(questions[i]);
 
-                //user input
+                // user input.
                 do
                 {
                     Console.WriteLine("Enter answer:");
-                    // checks if its a valid input by seeing if its a item of the array of valid answers.
-                    answerTemp = Convert.ToChar(Console.ReadLine().ToUpper()[0]);
-                    // remember to check for null values.
-                    if ((validinputs.Contains(answerTemp)) != true) Console.WriteLine("Invalid Input.\n");
-                } while ((validinputs.Contains(answerTemp)) != true);
+                    answerTemp = Console.ReadLine().ToUpper().Trim();
+                    // checks if the answer is greater than 1 char
+                    if (answerTemp.Length > 1) Console.WriteLine("Invalid Input. Please enter a single character.");
+                    // checks if the answer is null
+                    if (answerTemp == "") Console.WriteLine("Invalid Input. Empty values are not allowed.");
+                    if ((answerTemp.Length > 1) == false && answerTemp != "") userAnswer = Convert.ToChar(answerTemp);
+                    // checks if the answer is in the valid list of chars
+                    if ((validinputs.Contains(userAnswer)) != true) Console.WriteLine("Invalid Input.\n");
+                } while ((validinputs.Contains(userAnswer)) != true);
 
                 //checks if the answer is correct or wrong
-                if (answerTemp == answers[i])
+                if (userAnswer == answers[i])
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!");
