@@ -213,6 +213,9 @@
                     incorrectAnswers++;
                 }
                 Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers.\n");
+
+                answerTemp = "";
+                userAnswer = 'X';
             }
             return (correctAnswers, incorrectAnswers);
         }
