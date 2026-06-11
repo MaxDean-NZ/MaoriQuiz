@@ -192,9 +192,9 @@
                     if (answerTemp.Length > 1) Console.WriteLine("Invalid Input. Please enter a single character.");
                     // checks if the answer is null
                     if (answerTemp == "") Console.WriteLine("Invalid Input. Empty values are not allowed.");
-                    if ((answerTemp.Length > 1) == false && answerTemp != "") userAnswer = Convert.ToChar(answerTemp);
+                    if (!(answerTemp.Length > 1) && answerTemp != "") userAnswer = Convert.ToChar(answerTemp);
                     // checks if the answer is in the valid list of chars
-                    if ((validinputs.Contains(userAnswer)) != true) Console.WriteLine("Invalid Input.\n");
+                    if ((validinputs.Contains(userAnswer)) != true && answerTemp.Length == 1) Console.WriteLine("Invalid Input. Please enter A, B, C or D\n");
                 } while ((validinputs.Contains(userAnswer)) != true);
 
                 //checks if the answer is correct or wrong
