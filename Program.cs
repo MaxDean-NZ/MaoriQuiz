@@ -16,35 +16,25 @@
             "Question 1. What is Te Reo for Ocean? \nA. Moana\nB. Awa\nC. Whenua\nD. Maunga\n",
             "Question 2. What is 7 in Te Reo? \nA. Ono\nB. Rima\nC. Whitu\nD. Waru\n",
             "Question 3. What colour is Ma? \nA. Black\nB. White\nC. Brown\nD. Grey\n",
-            "Question 4. What is Matariki in Maori culture? \nA. A type of food\nB. A place \nC. A person \nD. Maori New Year",
+            "Question 4. What is Matariki in Maori culture? \nA. A type of food\nB. A place \nC. A person \nD. Maori New Year\n",
             "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n", };
             char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A',};
 
             string[] mediumQuestions = new string[] {
             "Question 1. What is 100 in Te Reo? \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
-            "Question 2. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makau Rau\nD. Otautahi\n",
+            "Question 2. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makaurau\nD. Otautahi\n",
             "Question 3. What is the North Island in Maori? \nA. Te Ika a Maui\nB. Rotorua\nC. Te Waipounamu\nD. Te Tai Tokerau\n",
             "Question 4. What is the ancestral homeland of all Maori in Maori culture? \nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. California\n",
-            "Question 5. When did Maori arrive in Aotearoa? \nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n",
-            /*"Question 6. What is a puku? \nA. Stomach\nB. Head\nC. Shoulders\nD. Knees\n",
-            "Question 7. What day is Rahina? \nA. Sunday\nB. Friday\nC. Tuesday\nD. Monday\n",
-            "Question 8. Where are taniwha depicted living? \nA. Mountains\nB. Forest\nC. Ocean / Lakes\nD. Desert\n",
-            "Question 9. Who was the one to slow down the sun? \nA. Ranginui\nB. Maui\nC. Tane\nD. Te Po\n",
-            "Question 10. What year did James Cook land in Aotearoa New Zealand? \nA. 1643\nB. 1956\nC. 1851\nD. 1769\n"*/};
-            char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D',/* 'A', 'D', 'C', 'B', 'D'*/ };
+            "Question 5. When did Maori arrive in Aotearoa? \nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n"};
+            char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D'};
 
             string[] hardQuestions = new string[] {
             "Question 1. What is Mahunga / Makawe?\nA. Earlobe\nB. Toes\nC. Shoulders\nD. Hair\n",
             "Question 2. If you feel ngenge, you are: \nA. Happy\nB. Tired\nC. Sad\nD. Angry\n",
-            "Question 3. If Te Kapua is tekau ma wha years old, how old is he? \nA. 14\nB. 15\nC. 21\nD. 25\n",
+            "Question 3. If Te Kapua is tekau ma wha years old, how old is he? \nA. 15\nB. 14\nC. 21\nD. 24\n",
             "Question 4. An Ika could be found at a: \nA. Maunga\nB. Awa\nC. Whenua\nD. Tahora\n",
-            "Question 5. What is the major conflict involving the Kingitanga movement and large land confiscations\nA. Te Kootis War\nB. WW II\nC. Invasion of the Waikato\nD. Taranaki War\n",
-            /*"Question 6. Where is the Maori Battalion reknown for their contribtion to W II? \nA. North Africa / Middle East\nB. Malaya\nC. Burma\nD. Saipan\n",
-            "Question 7. Which of these is not a member of the first 7 canoes to Aotearoa. \nA. Te Arawa\nB. Tainui\nC. Aotea\nD. Te Kawau\n",
-            "Question 8. Which Maori figure is depicted as the discoverer of Aotearoa? \nA. Te Rauparaha \nB. Rewi\nC. Kupe\nD. Te Kooti\n",
-            "Question 9. What is a karaka \nA. TV\nB. Clock\nC. Knife\nD. Bird\n",
-            "Question 10. Which of these are not a real Maori place? \nA. Ngamotu\nB. Te Tihi o Maru\nC. Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu\nD. Rukahu Reira\n"*/};
-            char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'C', /*'A', 'D', 'C', 'B', 'D'*/ };
+            "Question 5. What is the major conflict involving the Kingitanga movement and large land confiscations\nA. Te Kootis War\nB. WW II\nC. Invasion of the Waikato\nD. Taranaki War\n"};
+            char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'C'};
 
             // prompts the user for their name
             name = SelectName();
@@ -201,7 +191,7 @@
                 if (userAnswer == answers[i])
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Correct!");
+                    Console.WriteLine("Correct!\n");
                     Console.ResetColor();
                     correctAnswers++;
                 }
@@ -209,11 +199,11 @@
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Incorrect.");
+                    Console.WriteLine($"The answer was {answers[i]}\n");
                     Console.ResetColor();
                     incorrectAnswers++;
                 }
-                Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers.\n");
-
+                
                 answerTemp = "";
                 userAnswer = 'X';
             }
