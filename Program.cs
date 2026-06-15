@@ -33,8 +33,8 @@
             "Question 2. If you feel ngenge, you are: \nA. Happy\nB. Tired\nC. Sad\nD. Angry\n",
             "Question 3. If Te Kapua is tekau ma wha years old, how old is he? \nA. 15\nB. 14\nC. 21\nD. 24\n",
             "Question 4. An Ika could be found at a: \nA. Maunga\nB. Awa\nC. Whenua\nD. Tahora\n",
-            "Question 5. What is the major conflict involving the Kingitanga movement and large land confiscations\nA. Te Kootis War\nB. WW II\nC. Invasion of the Waikato\nD. Taranaki War\n"};
-            char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'C'};
+            "Question 5. Which of these is not a member of the first 7 canoes to Aotearoa. \nA. Te Arawa\nB. Tainui\nC. Aotea\nD. Te Kawau\n"};
+            char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'D'};
 
             // prompts the user for their name
             name = SelectName();
