@@ -18,7 +18,7 @@
             "Question 3. What colour is Ma? \nA. Black\nB. White\nC. Brown\nD. Grey\n",
             "Question 4. What is Matariki in Maori culture? \nA. A type of food\nB. A place \nC. A person \nD. Maori New Year\n",
             "Question 5. Who is the Maori god of the forest?\nA. Tane Mahuta\nB. Tangaroa\nC. Ao\nD. Haere\n", };
-            char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A',};
+            char[] easyAnswers = new char[] { 'A', 'C', 'B', 'D', 'A', };
 
             string[] mediumQuestions = new string[] {
             "Question 1. What is 100 in Te Reo? \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
@@ -26,7 +26,7 @@
             "Question 3. What is the North Island in Maori? \nA. Te Ika a Maui\nB. Rotorua\nC. Te Waipounamu\nD. Te Tai Tokerau\n",
             "Question 4. What is the ancestral homeland of all Maori in Maori culture? \nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. California\n",
             "Question 5. When did Maori arrive in Aotearoa? \nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n"};
-            char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D'};
+            char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D' };
 
             string[] hardQuestions = new string[] {
             "Question 1. What is Mahunga / Makawe?\nA. Earlobe\nB. Toes\nC. Shoulders\nD. Hair\n",
@@ -34,7 +34,7 @@
             "Question 3. If Te Kapua is tekau ma wha years old, how old is he? \nA. 15\nB. 14\nC. 21\nD. 24\n",
             "Question 4. An Ika could be found at a: \nA. Maunga\nB. Awa\nC. Whenua\nD. Tahora\n",
             "Question 5. Which of these is not a member of the first 7 canoes to Aotearoa. \nA. Te Arawa\nB. Tainui\nC. Aotea\nD. Te Kawau\n"};
-            char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'D'};
+            char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'D' };
 
             // prompts the user for their name
             name = SelectName();
@@ -77,7 +77,7 @@
                 percentage = CalculatePercentage(correctAnswers, incorrectAnswers);
 
                 /*calculates whether it is a highscore or not
-                if it is a highscore it changes it to the new highscore.*/
+                if it is a new highscore it changes the old highscore to the new highscore.*/
 
                 if (percentage > highscorepercentage)
                 {
@@ -117,7 +117,7 @@
                 name = Console.ReadLine().Trim();
                 // checks whether is null or empty
                 if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
-                // checks whether it obeys lower and upper bound
+                // checks whether it is in the boundaries (3 -> 20 characters)
                 if (name.Length > 20 || name.Length < 3 && name != "") Console.WriteLine("Name has to be between 20 and 3 characters.\n");
 
                 if (name.Length < 21 && name.Length > 2 && name != "")
@@ -130,7 +130,7 @@
                         // checks each individual letter whether its a valid letter or not
                         foreach (char letter in namechars)
                         {
-                            // if the char is not in the list of valid letters A-Z it sets the bool containsinvalidletter to true, which breaks the loop and reprompts the user for a new name.
+                            // if the char is not in the list of valid letters (A -> Z, a -> z) it sets the bool containsinvalidletter to true, which breaks the loop and reprompts the user for a new name.
                             if ((allowedLetters.Contains(letter)) != true)
                             {
                                 containsinvalidletter = true;
@@ -203,7 +203,7 @@
                     Console.ResetColor();
                     incorrectAnswers++;
                 }
-                
+
                 answerTemp = "";
                 userAnswer = 'X';
             }
