@@ -43,6 +43,9 @@
             // This is the main gameplay loop
             do
             {
+                // displays previous highscore.
+                if(highscoreCorrect > 0) Console.WriteLine($"Your highscore is {highscorepercentage}%, with {highscoreCorrect} out of {highscoreCorrect+highscoreIncorrect}");
+                
                 quizDifficulty = Convert.ToChar(SelectDifficulty());
                 Console.Clear();
                 // This switch loads the difficulties questions into the LoadQuestions() function, with it returning the number of incorrect and correct answers so the players grade / result can be calculated.
@@ -178,10 +181,11 @@
                 {
                     Console.WriteLine("Enter answer:");
                     answerTemp = Console.ReadLine().ToUpper().Trim();
-                    // checks if the answer is greater than 1 char
-                    if (answerTemp.Length > 1) Console.WriteLine("Invalid Input. Please enter a single character.");
                     // checks if the answer is null
                     if (answerTemp == "") Console.WriteLine("Invalid Input. Empty values are not allowed.");
+                    // checks if the answer is greater than 1 char
+                    if (answerTemp.Length > 1) Console.WriteLine("Invalid Input. Please enter a single character.");
+                    
                     if (!(answerTemp.Length > 1) && answerTemp != "") userAnswer = Convert.ToChar(answerTemp);
                     // checks if the answer is in the valid list of chars
                     if ((validinputs.Contains(userAnswer)) != true && answerTemp.Length == 1) Console.WriteLine("Invalid Input. Please enter A, B, C or D\n");
