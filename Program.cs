@@ -12,6 +12,8 @@
             int highscoreCorrect = 0, highscoreIncorrect = 0;
             decimal percentage = 0, highscorepercentage = 0;
 
+            // More questions can easily be added by modifying the question and answer key.
+
             string[] easyQuestions = new string[] {
             "Question 1. What is Te Reo for Ocean? \nA. Moana\nB. Awa\nC. Whenua\nD. Maunga\n",
             "Question 2. What is 7 in Te Reo? \nA. Ono\nB. Rima\nC. Whitu\nD. Waru\n",
@@ -118,11 +120,13 @@
 
                 Console.WriteLine("Please enter your name: ");
                 name = Console.ReadLine().Trim();
+                
                 // checks whether is null or empty
                 if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
                 // checks whether it is in the boundaries (3 -> 20 characters)
                 if (name.Length > 20 || name.Length < 3 && name != "") Console.WriteLine("Name has to be between 20 and 3 characters.\n");
 
+                // the name meets the requirements above, it then checks whether it contains any invalid characters.
                 if (name.Length < 21 && name.Length > 2 && name != "")
                 {
                     nameToUpper = name.ToUpper();
@@ -147,7 +151,7 @@
             return name;
         }
 
-        // takes player input validates, then returns the difficulty to the main loop
+        // This method takes player input, validates it, then returns the difficulty to the main loop
         static String SelectDifficulty()
         {
             String quizDifficulty;
@@ -168,7 +172,8 @@
             int correctAnswers = 0, incorrectAnswers = 0;
             string answerTemp;
             char userAnswer = 'X';
-            //valid inputs decides what characters are allowed
+            // valid inputs decides what characters are allowed.
+            // the list is modifiable allowing flexability in the amount of answers.
             char[] validinputs = new char[] { 'A', 'B', 'C', 'D' };
 
             for (int i = 0; i < questions.Length; i++)
