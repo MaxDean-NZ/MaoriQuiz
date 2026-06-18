@@ -40,14 +40,18 @@
 
             // prompts the user for their name
             name = SelectName();
-            Console.WriteLine($"\nWelcome to the quiz, {name}!");
+            Console.WriteLine($"\nWelcome to the Maori quiz, {name}!");
 
             // This is the main gameplay loop
             do
             {
-                // displays previous highscore.
-                if(highscoreCorrect > 0) Console.WriteLine($"Your highscore is {highscorepercentage}%, with {highscoreCorrect} out of {highscoreCorrect+highscoreIncorrect}");
-                
+                // displays highscore and welcome message after repeated play through.
+                if (highscoreCorrect > 0)
+                {
+                    Console.WriteLine($"Welcome back, {name}!");
+                    Console.WriteLine($"Your highscore is {highscorepercentage}%, with {highscoreCorrect} out of {highscoreCorrect + highscoreIncorrect}");
+                }
+
                 quizDifficulty = Convert.ToChar(SelectDifficulty());
                 Console.Clear();
                 // This switch loads the difficulties questions into the LoadQuestions() function, with it returning the number of incorrect and correct answers so the players grade / result can be calculated.
