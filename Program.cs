@@ -49,7 +49,7 @@
                 if (highscoreCorrect > 0)
                 {
                     Console.WriteLine($"Welcome back, {name}!");
-                    Console.WriteLine($"Your highscore is {highscorepercentage}%, with {highscoreCorrect} out of {highscoreCorrect + highscoreIncorrect}");
+                    Console.WriteLine($"Your highscore is {highscorepercentage}%, with {highscoreCorrect} out of {highscoreCorrect + highscoreIncorrect}.");
                 }
 
                 quizDifficulty = Convert.ToChar(SelectDifficulty());
