@@ -94,11 +94,11 @@
                     highscoreCorrect = correctAnswers;
                     highscoreIncorrect = incorrectAnswers;
 
-                    Console.WriteLine($"You have a new high score with {correctAnswers} correct answers and {incorrectAnswers} incorrect answers, with a percentage of {percentage}%");
+                    Console.WriteLine($"Well done, {name}! You have a new high score with {correctAnswers} correct answers and {incorrectAnswers} incorrect answers, with a percentage of {percentage}%");
                 }
                 else
                 {
-                    Console.WriteLine($"You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers, with a percentage of {percentage}%");
+                    Console.WriteLine($"Thanks for playing the quiz, {name}. You have {correctAnswers} correct answers and {incorrectAnswers} incorrect answers, with a percentage of {percentage}%");
                 }
 
                 //asks whether the player would like to replay or not
