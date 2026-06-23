@@ -13,7 +13,6 @@
             decimal percentage = 0, highscorepercentage = 0;
 
             // More questions can easily be added by modifying the question and answer key.
-
             string[] easyQuestions = new string[] {
             "Question 1. What is Te Reo for Ocean? \nA. Moana\nB. Awa\nC. Whenua\nD. Maunga\n",
             "Question 2. What is 7 in Te Reo? \nA. Ono\nB. Rima\nC. Whitu\nD. Waru\n",
@@ -126,7 +125,7 @@
                 name = Console.ReadLine().Trim();
                 
                 // checks whether is null or empty
-                if (name == null || name == "") Console.WriteLine("Name is not allowed to be empty.\n");
+                if (name.Equals(null) || name.Equals("")) Console.WriteLine("Name is not allowed to be empty.\n");
                 // checks whether it is in the boundaries (3 -> 20 characters)
                 if (name.Length > 20 || name.Length < 3 && name != "") Console.WriteLine("Name has to be between 20 and 3 characters.\n");
 
@@ -151,7 +150,7 @@
                     } while (containsinvalidletter == false && validname == false);
                     if (containsinvalidletter) Console.WriteLine("Invalid characters, please enter A-Z only.\n");
                 }
-            } while (name == null || name == "" || name.Length > 20 || name.Length < 3 || validname == false || containsinvalidletter == true);
+            } while (name.Equals(null) || name.Equals("")|| name.Length > 20 || name.Length < 3 || validname == false || containsinvalidletter == true);
             return name;
         }
 
@@ -191,7 +190,7 @@
                     Console.WriteLine("Enter answer:");
                     answerTemp = Console.ReadLine().ToUpper().Trim();
                     // checks if the answer is null
-                    if (answerTemp == "") Console.WriteLine("Invalid Input. Empty values are not allowed.");
+                    if (answerTemp.Equals("")) Console.WriteLine("Invalid Input. Empty values are not allowed.");
                     // checks if the answer is greater than 1 char
                     if (answerTemp.Length > 1) Console.WriteLine("Invalid Input. Please enter a single character.");
                     
