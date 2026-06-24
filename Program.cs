@@ -233,13 +233,13 @@
         //replay function , if player answers Y, it resarts gameplay loop, if player answers N, it exits gameplay loop.
         static char Replay()
         {
-            String replay = " ";
+            String replay = "";
             do
             {
                 Console.WriteLine("Would you like to replay? [Y/N]: ");
                 replay = Console.ReadLine().Trim().ToUpper();
-                if (replay != "Y" && replay != "N") Console.WriteLine("Invalid input, please enter [Y/N].");
-            } while (replay != "Y" && replay != "N");
+                if (!replay.Equals("Y") && !replay.Equals("N")) Console.WriteLine("Invalid input, please enter [Y/N].");
+            } while (!replay.Equals("Y") && replay != "N");
             return Convert.ToChar(replay);
         }
     }
