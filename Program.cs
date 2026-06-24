@@ -25,7 +25,7 @@
             "Question 1. What is 100 in Te Reo? \nA. Kotahi Rau\nB. Tekau Tekau\nC. Kotahi Mano\nD. Miriona\n",
             "Question 2. What is Auckland in Maori? \nA. Tauranga\nB. Kirikiriroa\nC. Tamaki Makaurau\nD. Otautahi\n",
             "Question 3. What is the North Island in Maori? \nA. Te Ika a Maui\nB. Rotorua\nC. Te Waipounamu\nD. Te Tai Tokerau\n",
-            "Question 4. What is the ancestral homeland of all Maori in Maori culture? \nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. California\n",
+            "Question 4. What is the ancestral homeland of all Maori in Maori culture? \nA. Easter Island\nB. Hawaiki\nC. Samoa\nD. Rotorua\n",
             "Question 5. When did Maori arrive in Aotearoa? \nA. 200BC\nB. 1840AD\nC. 100AD\nD. 1300AD\n"};
             char[] mediumAnswers = new char[] { 'A', 'C', 'A', 'B', 'D' };
 
@@ -34,7 +34,7 @@
             "Question 2. If you feel ngenge, you are: \nA. Happy\nB. Tired\nC. Sad\nD. Angry\n",
             "Question 3. If Te Kapua is tekau ma wha years old, how old is he? \nA. 15\nB. 14\nC. 21\nD. 24\n",
             "Question 4. An Ika could be found at a: \nA. Maunga\nB. Awa\nC. Whenua\nD. Tahora\n",
-            "Question 5. Which of these is not a member of the first 7 canoes to Aotearoa. \nA. Te Arawa\nB. Tainui\nC. Aotea\nD. Te Kawau\n"};
+            "Question 5. Which of these is not a member of the first 7 canoes to Aotearoa? \nA. Te Arawa\nB. Tainui\nC. Aotea\nD. Te Kawau\n"};
             char[] hardAnswers = new char[] { 'D', 'B', 'B', 'B', 'D' };
 
             // prompts the user for their name
